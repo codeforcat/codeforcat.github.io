@@ -71,12 +71,12 @@ strong, span {
 .section-btn {
   background: #d7b065;
   border: none;
-  border-radius: 50px;
+  border-radius: 30px;
   color: #ffffff;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 1.6px;
-  padding: 14px 32px 18px 32px;
+  padding: 14px 22px 18px 22px;
   margin-top: 32px;
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
@@ -126,8 +126,8 @@ a:hover, a:active, a:focus {
   padding-bottom: 32px;
 }
 
-#about, #work,
-#contact {
+#about, #action,
+#catdon {
   position: relative;
   padding-top: 80px;
   padding-bottom: 80px;
