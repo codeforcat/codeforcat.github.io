@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const reports = await getCollection("reports");
+  return reports.map((report) => ({
+    params: { slug: report.id.replace(/\.md$/, "") },
+    props: { report },
+  }));
+}
+
+const { report } = Astro.props;
+const { Content } = await report.render();
+---
+<BaseLayout title={report.data.title} description={report.data.description}>
+  <section class="page-title compact">
+    <p class="eyebrow">生成資料</p>
+    <h1>{report.data.title}</h1>
+    {report.data.description && <p>{report.data.description}</p>}
+  </section>
+  <article class="report-body prose">
+    <Content />
+  </article>
+</BaseLayout>

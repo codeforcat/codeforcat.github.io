@@ -1,0 +1,24 @@
+{
+  "name": "facebook-page-archive",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "inspect:export": "python3 scripts/inspect_facebook_export.py",
+    "reset:content": "python3 scripts/reset_generated_content.py",
+    "build:images": "python3 scripts/build_image_assets.py",
+    "build:archive": "python3 scripts/build_markdown_archive.py",
+    "sources:index": "python3 scripts/source_pipeline.py",
+    "sources:fetch-web": "python3 scripts/fetch_web_source.py",
+    "media:download": "python3 scripts/download_media_asset.py",
+    "media:publish": "python3 scripts/publish_media_assets.py",
+    "export:content": "python3 scripts/export_astro_content.py",
+    "generate": "npm run sources:index && npm run inspect:export && npm run build:images && npm run media:publish && npm run build:archive && npm run export:content"
+  },
+  "devDependencies": {
+    "astro": "^5.0.0"
+  }
+}

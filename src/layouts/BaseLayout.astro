@@ -1,0 +1,76 @@
+---
+import "../styles/global.css";
+import { absoluteUrl, siteData, siteImage } from "../lib/archive";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const title = Astro.props.title ? `${Astro.props.title} | ${siteData.shortName}` : siteData.siteName;
+const description = Astro.props.description || siteData.siteDescription;
+const image = siteImage(Astro.props.image || siteData.defaultOgImage);
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={absoluteUrl(Astro.url.pathname)} />
+    {image && <meta property="og:image" content={absoluteUrl(image)} />}
+    <link rel="canonical" href={absoluteUrl(Astro.url.pathname)} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-type">Code for CAT.</span>
+      </a>
+      <nav aria-label="主要ナビゲーション">
+        <a href="/">Home</a>
+        <a href="/#about">About Code for CAT</a>
+        <a href="/#action">Action</a>
+        <a href="/#blog">Blog</a>
+        <a href="/archive.html">Activities</a>
+      </nav>
+      <details class="mobile-nav">
+        <summary aria-label="メニューを開く">
+          <span class="paw-menu" aria-hidden="true"><i></i><b></b><em></em><strong></strong></span>
+          <span>Menu</span>
+        </summary>
+        <div class="mobile-nav-panel">
+          <a href="/">Home</a>
+          <a href="/#about">About Code for CAT</a>
+          <a href="/#action">CatBot project</a>
+          <a href="/#catdon">Catdon</a>
+          <a href="/#blog">Blog</a>
+          <a href="/archive.html">Activities</a>
+        </div>
+      </details>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-intro">
+        <span class="paw-mark footer-mark" aria-hidden="true"><i></i><b></b><em></em><strong></strong></span>
+        <p class="footer-name">{siteData.siteName}</p>
+        <p>テクノロジーにより、ネコとヒトの素敵な関係をつくります。</p>
+      </div>
+      <div class="footer-links">
+        <a href="/analysis.html">分析レポート</a>
+        <a href="/archive.html">活動紹介</a>
+        <a href="/about.html">公式情報</a>
+        <a href="/research.html">関連資料</a>
+        <a href={siteData.facebookUrl}>Facebookページ</a>
+      </div>
+      <p class="copyright">Copyright © 2026 {siteData.shortName}. All rights reserved.</p>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

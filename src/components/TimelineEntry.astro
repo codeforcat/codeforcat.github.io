@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { excerpt, siteImage, themeText } from "../lib/archive";
+
+type Entry =
+  | { kind: "event"; item: CollectionEntry<"events"> }
+  | { kind: "post"; item: CollectionEntry<"notes"> }
+  | { kind: "external"; item: CollectionEntry<"external"> };
+
+const { entry } = Astro.props as { entry: Entry };
+const data = entry.item.data;
+const body = entry.item.body || "";
+const image = "image" in data && data.image ? siteImage(data.image, false) : "";
+const href = entry.kind === "event" && data.hasDetail ? `/${data.page}` : "";
+const label = entry.kind === "event" ? themeText(data.themes) : entry.kind === "external" ? data.category : "投稿";
+const displayDate = entry.kind === "external" ? data.displayDate : data.date;
+---
+<article class:list={["timeline-entry", { "has-thumb": image }]}>
+  {image && <img class="timeline-thumb" src={image} alt="" loading="lazy" />}
+  <div class="timeline-body">
+    <p class="meta">{displayDate} · {label}</p>
+    <h3>{href ? <a href={href}>{data.title}</a> : data.title}</h3>
+    {entry.kind === "event" && data.place && <p class="place">{data.place}</p>}
+    <p>{excerpt(body, entry.kind === "event" ? 132 : 180)}</p>
+    {entry.kind === "external" && (
+      <p class="source-line">
+        確認度: {data.confidence} · 出典: {data.sourceUrl ? <a href={data.sourceUrl}>{data.sourceLabel}</a> : data.sourceLabel}
+      </p>
+    )}
+  </div>
+</article>

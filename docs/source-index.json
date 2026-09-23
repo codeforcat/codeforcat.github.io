@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Facebook Pages JSON Export",
+    "path": "sources/facebook-export/source.json",
+    "source_group": "facebook-export",
+    "source_type": "facebook_export",
+    "visibility": "private",
+    "confidence": "partial",
+    "checked_at": "2026-06-23",
+    "source_urls": []
+  },
+  {
+    "title": "Code for CAT 多角的分析 Deepresearch",
+    "path": "sources/ai-deepresearch/2026-06-23-code-for-cat-multifaceted-analysis.md",
+    "source_group": "ai-deepresearch",
+    "source_type": "ai_deepresearch",
+    "visibility": "review",
+    "confidence": "unverified",
+    "checked_at": "",
+    "source_urls": []
+  },
+  {
+    "title": "公開Web調査とファクトチェック",
+    "path": "sources/codex-research/2026-06-23-public-web-factcheck.md",
+    "source_group": "codex-research",
+    "source_type": "codex_research",
+    "visibility": "review",
+    "confidence": "partial",
+    "checked_at": "2026-06-23",
+    "source_urls": [
+      "https://code4cat.org/",
+      "https://www.code4japan.org/activity/civictech",
+      "https://www.code4japan.org/activity/socialhackday",
+      "https://www.code4japan.org/news/civic-tech-fun-fun-report-2020-2",
+      "https://catdon.life/",
+      "https://medium.com/codeforcat/ishinomaki-hackathon-2019-949343a0590c",
+      "https://qiita.com/advent-calendar/2018/codeforcat"
+    ]
+  },
+  {
+    "title": "公開Web調査に基づく年表ファクト",
+    "path": "sources/codex-research/2026-06-23-timeline-facts.json",
+    "source_group": "codex-research",
+    "source_type": "codex_research",
+    "visibility": "review",
+    "confidence": "partial",
+    "checked_at": "2026-06-23",
+    "source_urls": [
+      "https://medium.com/codeforcat/code-for-cat-%E7%99%BA%E8%B6%B3%E7%A7%98%E8%A9%B1-8ab927b789ca",
+      "https://medium.com/codeforcat/ishinomaki-hackathon-2019-949343a0590c",
+      "https://catdon.life/",
+      "https://note.com/sobide/n/ncba847d4b3ae",
+      "https://qiita.com/advent-calendar/2018/codeforcat",
+      "https://www.code4japan.org/news/civic-tech-fun-fun-report-2020-2",
+      "https://podcasts.apple.com/jp/podcast/ep1-0-12-code-for-cat%E3%81%AE%E5%8F%96%E3%82%8A%E7%B5%84%E3%81%BF-2025%E5%B9%B4%E5%BA%A6%E7%89%88/id1587297171?i=1000742234045",
+      "https://medium.com/codeforcat/code-for-cat-%E7%99%BA%E8%B6%B3%E7%A7%98%E8%A9%B1-8ab927b789ca\"",
+      "https://medium.com/codeforcat/ishinomaki-hackathon-2019-949343a0590c\"",
+      "https://catdon.life/\"",
+      "https://note.com/sobide/n/ncba847d4b3ae\"",
+      "https://qiita.com/advent-calendar/2018/codeforcat\"",
+      "https://www.code4japan.org/news/civic-tech-fun-fun-report-2020-2\"",
+      "https://podcasts.apple.com/jp/podcast/ep1-0-12-code-for-cat%E3%81%AE%E5%8F%96%E3%82%8A%E7%B5%84%E3%81%BF-2025%E5%B9%B4%E5%BA%A6%E7%89%88/id1587297171?i=1000742234045\""
+    ]
+  }
+]

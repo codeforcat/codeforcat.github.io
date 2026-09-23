@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { schemaDateTime, siteImage, themeText } from "../lib/archive";
+
+export async function getStaticPaths() {
+  const events = await getCollection("events");
+  return events.filter((event) => event.data.hasDetail).map((event) => ({
+    params: { slug: event.data.page.replace(/\.html$/, "") },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props;
+const { Content } = await event.render();
+const images = event.data.images.map(siteImage).filter(Boolean);
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: event.data.title,
+  startDate: schemaDateTime(event.data.start),
+  endDate: schemaDateTime(event.data.end),
+  location: event.data.place ? { "@type": "Place", name: event.data.place } : undefined,
+  image: images,
+  description: event.body.replace(/\s+/g, " ").slice(0, 240),
+};
+---
+<BaseLayout title={event.data.title} description={event.body.replace(/\s+/g, " ").slice(0, 150)} image={event.data.image}>
+  <article class="event-detail">
+    <header>
+      <p class="eyebrow">{event.data.date} · {themeText(event.data.themes)}</p>
+      <h1>{event.data.title}</h1>
+      <dl class="event-meta">
+        <div><dt>日時</dt><dd>{event.data.start}{event.data.end && ` - ${event.data.end}`}</dd></div>
+        {event.data.place && <div><dt>場所</dt><dd>{event.data.place}</dd></div>}
+      </dl>
+    </header>
+    {images.length > 0 && (
+      <div class="photo-strip">
+        {images.map((image) => <img src={image} alt="" loading="lazy" />)}
+      </div>
+    )}
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>

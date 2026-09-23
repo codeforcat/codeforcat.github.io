@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-reference">
+      <img class="hero-logo" src="/assets/reference/code-for-cat-logo.png" alt="CODE for CAT" />
+      <div class="hero-message">
+        <h1>テクノロジーによりネコとヒトの<br />素敵な関係を作ります。</h1>
+        <p>Code for CATの活動やプロジェクトについてご紹介します。</p>
+        <div class="hero-actions">
+          <a class="button" href="/archive.html">activities</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reference-section about-section" id="about">
+    <div class="reference-container">
+      <div class="about-copy">
+        <h2>Code for CATって？</h2>
+        <p><strong>ネコとヒトのとってもステキな関係のために。</strong></p>
+        <p>コードフォーキャットは、地域猫を地域の資産であると捉え、殺処分（収容数）ゼロを目指している団体の活動を支援するために、IT技術を活用した、持続可能な仕組みを開発し、継続的な支援を行っていきます。</p>
+        <ul class="social-icons" aria-label="Code for CATのSNS">
+          <li><a href="https://twitter.com/codeforcat" aria-label="X" target="_blank" rel="noreferrer">X</a></li>
+          <li><a href="https://www.facebook.com/CODEforCAT/" aria-label="Facebook" target="_blank" rel="noreferrer">f</a></li>
+          <li><a href="https://www.instagram.com/codeforcat/" aria-label="Instagram" target="_blank" rel="noreferrer">◎</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="reference-section project-section" id="action">
+    <div class="reference-container project-grid">
+      <div class="project-copy">
+        <h2>CatBot project</h2>
+        <p>猫に関するあらゆる質問疑問に答えるChatBot（自動応答）サービスです。</p>
+        <p>猫と人間が長く付き合っていくため、猫に対する正しい知識と正しいつきあい方（飼い方）が分かるようになります。</p>
+        <p class="project-status">CatBot β版公開中。</p>
+        <a class="reference-button" href="https://forms.gle/AqGV2gkvaBXujZrp6" target="_blank" rel="noreferrer">フィードバックはこちらから</a>
+      </div>
+      <div class="project-image">
+        <img src="/assets/reference/catbot.png" alt="CatBot" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="reference-section catdon-section" id="catdon">
+    <div class="reference-container project-grid catdon-grid">
+      <div class="project-image catdon-image">
+        <a href="https://catdon.life/" target="_blank" rel="noreferrer">
+          <img src="/assets/reference/catdon.png" alt="キャット丼" loading="lazy" />
+        </a>
+      </div>
+      <div class="project-copy">
+        <h2>Catdon</h2>
+        <p>猫好きのためのマストドン。猫に魅入られている方専用</p>
+        <p>Code for CATがお届けする、猫に魅入られてしまった人なら誰でもwelcomeなCAT SNS（マストドン。）</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reference-section blog-section" id="blog">
+    <div class="reference-container">
+      <div class="blog-embed">
+        <iframe
+          title="Code for CAT Blog"
+          src="https://feed.mikle.com/widget/v2/120699/"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="archive-gateway">
+    <div class="reference-container archive-gateway-inner">
+      <div>
+        <p class="gateway-label">Our activities</p>
+        <h2>猫とつくる活動を知る</h2>
+        <p>CatBot、Catdon、ワークショップなど、Code for CATの取り組みをご紹介します。</p>
+      </div>
+      <a class="gateway-link" href="/archive.html">Activities <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</BaseLayout>

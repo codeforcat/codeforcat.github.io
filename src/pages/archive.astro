@@ -1,0 +1,65 @@
+---
+import EventCard from "../components/EventCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEvents } from "../lib/archive";
+
+const events = await getEvents();
+const featured = events.slice(0, 4);
+---
+<BaseLayout title="活動紹介" description="Code for CATの活動とプロジェクトをご紹介します">
+  <section class="page-title archive-title">
+    <p class="eyebrow">Our activities</p>
+    <h1>猫と考え、<br />猫とつくる。</h1>
+    <p>猫を入口に、地域と技術をつなぐCode for CATの活動とプロジェクトをご紹介します。</p>
+  </section>
+
+  <section class="section archive-intro">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">What we do</p>
+        <h2>猫を入口に、<br />地域と技術をつなぐ。</h2>
+      </div>
+      <a class="text-link" href="/about.html">Code for CATについて →</a>
+    </div>
+    <div class="insight-grid">
+      <article class="insight-card">
+        <p class="card-number">01</p>
+        <p class="meta">CatBot</p>
+        <h3>猫の疑問に答える</h3>
+        <p>猫に関する正しい知識とつきあい方を届ける、自動応答サービスを開発しています。</p>
+      </article>
+      <article class="insight-card">
+        <p class="card-number">02</p>
+        <p class="meta">Community</p>
+        <h3>猫好きが安心して集まる</h3>
+        <p>Catdonやイベントを通じて、猫に魅入られた人たちの交流と知識共有の場をつくります。</p>
+      </article>
+      <article class="insight-card">
+        <p class="card-number">03</p>
+        <p class="meta">Civic Tech</p>
+        <h3>地域と技術をつなぐ</h3>
+        <p>ワークショップやハッカソンを通じて、市民の経験や疑問をサービスと知識へ変えていきます。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="archive-routes">
+    <a href="/timeline.html"><span>01</span><strong>活動年表</strong><small>時間からたどる</small></a>
+    <a href="/themes.html"><span>02</span><strong>テーマ</strong><small>関心からたどる</small></a>
+    <a href="/analysis.html"><span>03</span><strong>分析</strong><small>背景を読み解く</small></a>
+    <a href="/research.html"><span>04</span><strong>関連資料</strong><small>出典を確認する</small></a>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Activity reports</p>
+        <h2>活動レポート</h2>
+      </div>
+      <a class="text-link" href="/timeline.html">すべての記録を見る →</a>
+    </div>
+    <div class="grid cards">
+      {featured.map((event) => <EventCard event={event} />)}
+    </div>
+  </section>
+</BaseLayout>

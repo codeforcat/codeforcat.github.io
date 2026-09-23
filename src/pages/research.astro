@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getNotes, getPage, getReports } from "../lib/archive";
+
+const page = await getPage("research");
+const notes = await getNotes();
+const reports = await getReports();
+const { Content } = await page!.render();
+---
+<BaseLayout title="関連資料" description={page?.data.description}>
+  <section class="page-title compact">
+    <p class="eyebrow">資料と確認事項</p>
+    <h1>関連資料</h1>
+  </section>
+  <section class="prose">
+    <Content />
+  </section>
+  <section class="section">
+    <div class="section-heading">
+      <h2>生成資料</h2>
+      <span>{reports.length}件</span>
+    </div>
+    <div class="report-grid">
+      {reports.map((report) => (
+        <article class="report-card">
+          <p class="meta">資料</p>
+          <h3><a href={`/reports/${report.id.replace(/\.md$/, "")}.html`}>{report.data.title}</a></h3>
+          {report.data.description && <p>{report.data.description}</p>}
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-heading">
+      <h2>投稿メモ</h2>
+      <span>{notes.length}件</span>
+    </div>
+    <div class="note-list">
+      {notes.map((note) => (
+        <article>
+          <p class="meta">{note.data.date}</p>
+          <h3>{note.data.title}</h3>
+          <p>{note.body.replace(/\s+/g, " ").slice(0, 180)}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

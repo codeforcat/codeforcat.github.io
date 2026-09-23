@@ -1,0 +1,8 @@
+node_modules
+.astro
+dist
+*.zip
+data/facebook-export/
+sources/internal/*
+!sources/internal/README.md
+sources/media/downloads/*

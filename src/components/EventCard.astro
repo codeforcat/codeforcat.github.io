@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { excerpt, siteImage, themeText } from "../lib/archive";
+
+interface Props {
+  event: CollectionEntry<"events">;
+}
+
+const { event } = Astro.props;
+const image = siteImage(event.data.image);
+const body = event.body || "";
+---
+<article class="event-card">
+  {image ? <img src={image} alt="" loading="lazy" /> : <div class="event-placeholder">CODE for CAT</div>}
+  <div>
+    <p class="meta">{event.data.date} · {themeText(event.data.themes)}</p>
+    <h3>
+      {event.data.hasDetail ? <a href={`/${event.data.page}`}>{event.data.title}</a> : event.data.title}
+    </h3>
+    {event.data.place && <p class="place">{event.data.place}</p>}
+    <p>{excerpt(body, 120)}</p>
+  </div>
+</article>
+
