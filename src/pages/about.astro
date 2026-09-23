@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPage, siteData } from "../lib/archive";
+
+const page = await getPage("about");
+const { Content } = await page!.render();
+---
+<BaseLayout title="公式情報" description={page?.data.description}>
+  <section class="page-title compact">
+    <p class="eyebrow">ページ情報</p>
+    <h1>公式情報</h1>
+  </section>
+  <section class="prose">
+    <Content />
+    <p><a class="button" href={siteData.facebookUrl}>Facebookページを開く</a></p>
+  </section>
+</BaseLayout>

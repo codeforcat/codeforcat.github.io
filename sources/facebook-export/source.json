@@ -1,0 +1,14 @@
+{
+  "title": "Facebook Pages JSON Export",
+  "source_type": "facebook_export",
+  "created_at": "2026-06-22",
+  "checked_at": "2026-06-23",
+  "author": "Facebook export",
+  "visibility": "private",
+  "confidence": "partial",
+  "local_paths": [
+    "facebook-CODEforCAT-2026_06_22-enQ3GTXm.zip",
+    "data/facebook-export/"
+  ],
+  "notes": "原本ZIPと展開データは非公開。生成スクリプトで公開イベント、公開投稿、公開可能画像のみを抽出する。"
+}

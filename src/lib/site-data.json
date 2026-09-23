@@ -1,0 +1,14 @@
+{
+  "siteName": "CODE for CAT 公式サイト",
+  "shortName": "CODE for CAT",
+  "siteOrigin": "https://example.com",
+  "siteDescription": "テクノロジーによりネコとヒトの素敵な関係を作ります。",
+  "logoPath": "/assets/images/webp/archive-image-0001.webp",
+  "defaultOgImage": "/assets/images/webp/archive-image-0001.webp",
+  "facebookUrl": "https://www.facebook.com/CODEforCAT",
+  "profileCategory": "団体",
+  "eventCount": 7,
+  "postCount": 16,
+  "imageCount": 74,
+  "siteOriginNeedsReview": true
+}

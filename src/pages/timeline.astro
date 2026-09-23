@@ -1,0 +1,27 @@
+---
+import TimelineEntry from "../components/TimelineEntry.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEvents, getExternalTimeline, getNotes, groupByYear } from "../lib/archive";
+
+const events = (await getEvents()).map((item) => ({ kind: "event" as const, item, sort: item.data.sort, date: item.data.date }));
+const posts = (await getNotes()).map((item) => ({ kind: "post" as const, item, sort: item.data.sort || 0, date: item.data.date || "" }));
+const external = (await getExternalTimeline()).map((item) => ({ kind: "external" as const, item, sort: item.data.sort, date: item.data.date }));
+const groups = groupByYear([...events, ...posts, ...external].sort((a, b) => b.sort - a.sort));
+---
+<BaseLayout title="年表" description="Facebookイベントと投稿を時系列で整理した年表">
+  <section class="page-title">
+    <p class="eyebrow">活動の記録</p>
+    <h1>活動年表</h1>
+    <p>この年表はFacebookページの公開イベント・投稿に、公開Web調査で確認した活動メモを重ねています。出典がFacebook外のものは、確認度と情報源を各項目に表示しています。</p>
+  </section>
+  <section class="timeline">
+    {Object.entries(groups).map(([year, entries]) => (
+      <div class="year-block">
+        <h2>{year}</h2>
+        <div class="timeline-list">
+          {entries.map((entry) => <TimelineEntry entry={entry} />)}
+        </div>
+      </div>
+    ))}
+  </section>
+</BaseLayout>

@@ -1,0 +1,141 @@
+{
+  "title": "公開Web調査に基づく年表ファクト",
+  "source_type": "codex_research",
+  "created_at": "2026-06-23",
+  "checked_at": "2026-06-23",
+  "author": "Codex",
+  "visibility": "review",
+  "confidence": "partial",
+  "notes": "公開Web調査とユーザー提供調査をもとに、Facebookエクスポートでは薄い初期・空白期の年表補完候補を構造化したもの。公開本文では確認度に応じた表現にする。",
+  "source_urls": [
+    "https://medium.com/codeforcat/code-for-cat-%E7%99%BA%E8%B6%B3%E7%A7%98%E8%A9%B1-8ab927b789ca",
+    "https://medium.com/codeforcat/ishinomaki-hackathon-2019-949343a0590c",
+    "https://catdon.life/",
+    "https://note.com/sobide/n/ncba847d4b3ae",
+    "https://qiita.com/advent-calendar/2018/codeforcat",
+    "https://www.code4japan.org/news/civic-tech-fun-fun-report-2020-2",
+    "https://podcasts.apple.com/jp/podcast/ep1-0-12-code-for-cat%E3%81%AE%E5%8F%96%E3%82%8A%E7%B5%84%E3%81%BF-2025%E5%B9%B4%E5%BA%A6%E7%89%88/id1587297171?i=1000742234045"
+  ],
+  "timeline": [
+    {
+      "slug": "2015-civic-tech-forum-start",
+      "date": "2015.03.01",
+      "displayDate": "2015年春",
+      "sort": 20150301,
+      "title": "CIVIC TECH FORUM 2015のアンカンファレンスで構想が立ち上がる",
+      "category": "公開Web調査",
+      "confidence": "公開記事に基づく",
+      "sourceLabel": "Medium: Code for CAT 発足秘話",
+      "sourceUrl": "https://medium.com/codeforcat/code-for-cat-%E7%99%BA%E8%B6%B3%E7%A7%98%E8%A9%B1-8ab927b789ca",
+      "body": "公開記事では、CIVIC TECH FORUM 2015のアンカンファレンスで「Code for Catをどうつくる？」というテーマが提示され、初期メンバーが集まったと説明されています。日付は記事内容に基づく季節表記で、正確な開催日は公開前確認が必要です。"
+    },
+    {
+      "slug": "2015-code-for-japan-summit-launch",
+      "date": "2015.10.01",
+      "displayDate": "2015年秋",
+      "sort": 20151001,
+      "title": "Code for Japan Summit 2015で正式発足したとされる",
+      "category": "公開Web調査",
+      "confidence": "公開記事に基づく",
+      "sourceLabel": "Medium: Code for CAT 発足秘話",
+      "sourceUrl": "https://medium.com/codeforcat/code-for-cat-%E7%99%BA%E8%B6%B3%E7%A7%98%E8%A9%B1-8ab927b789ca",
+      "body": "発足秘話の記事では、Code for Japan Summit 2015の「Code for Cat 猫の問題を解決しよう」セッションで正式発足したと説明されています。Facebookエクスポート内の年表は2016年以降が中心のため、2015年の発足情報は外部公開記事で補っています。"
+    },
+    {
+      "slug": "2016-ishinomaki-first-hackathon",
+      "date": "2016.07.29",
+      "displayDate": "2016年7月",
+      "sort": 20160729,
+      "title": "石巻ハッカソン参加と田代島ツアー＆キャットソン",
+      "category": "Facebook + 公開Web",
+      "confidence": "複数資料で確認",
+      "sourceLabel": "Facebookイベント / Medium: 猫たちの夏2019",
+      "sourceUrl": "https://medium.com/codeforcat/ishinomaki-hackathon-2019-949343a0590c",
+      "body": "Facebookイベントには2016年7月の「猫と考え、猫とつくる、キャットソン。」が残っています。2019年のMedium記事では、Code for CATが2016年以来毎年石巻ハッカソンに参加しており、2016年は「田代島ツアー＆キャットソン」だったと説明されています。"
+    },
+    {
+      "slug": "2017-catdon-and-map-app",
+      "date": "2017.04.19",
+      "displayDate": "2017年",
+      "sort": 20170419,
+      "title": "Catdon立ち上げと石巻ハッカソン「猫＋地図アプリ」",
+      "category": "公開Web調査",
+      "confidence": "公開記事に基づく",
+      "sourceLabel": "Catdon / Medium: 猫たちの夏2019",
+      "sourceUrl": "https://catdon.life/",
+      "body": "Catdonは猫好き向けMastodonとして公開されており、公開記事では2017年4月19日の立ち上げと説明されています。また、2019年のMedium記事では、2017年の石巻ハッカソンテーマが「猫＋地図アプリ」だったと記録されています。"
+    },
+    {
+      "slug": "2017-nekoichi-writeathon",
+      "date": "2017.12.01",
+      "displayDate": "2017年12月",
+      "sort": 20171201,
+      "title": "ネコ市ネコ座でライタソンを実施しCatBot向けQ&A収集へ",
+      "category": "公開Web調査",
+      "confidence": "公開記事に基づく",
+      "sourceLabel": "note: ライタソンでチャットボット",
+      "sourceUrl": "https://note.com/sobide/n/ncba847d4b3ae",
+      "body": "公開記事では、ネコ市ネコ座で猫に関する疑問を集めるライタソンが実施され、その後のCatBotの知識基盤づくりにつながったと説明されています。Facebookエクスポートでは直接確認できないため、公開記事に基づく補完情報として扱います。"
+    },
+    {
+      "slug": "2018-advent-calendar-and-civic-tech-forum",
+      "date": "2018.12.01",
+      "displayDate": "2018年",
+      "sort": 20181201,
+      "title": "Civic Tech Forum登壇とCode for CAT Advent Calendarで活動知が蓄積",
+      "category": "公開Web調査",
+      "confidence": "公開ページで確認",
+      "sourceLabel": "Qiita Advent Calendar / CIVIC TECH FORUM 2018",
+      "sourceUrl": "https://qiita.com/advent-calendar/2018/codeforcat",
+      "body": "2018年はCivic Tech ForumでCode for CATの取り組みが紹介され、QiitaのAdvent Calendarにも発足経緯、地域猫、Social Hack Day、ライタソン、Catdon、NECOLOなどの関連記事が集まりました。Facebook上のイベント記録と外部記事群が重なる時期です。"
+    },
+    {
+      "slug": "2019-ishinomaki-card-game",
+      "date": "2019.12.31",
+      "displayDate": "2019年",
+      "sort": 20191231,
+      "title": "石巻ハッカソンで地域猫カードゲームのデジタル化に挑戦",
+      "category": "公開Web調査",
+      "confidence": "公開記事で確認",
+      "sourceLabel": "Medium: 猫たちの夏2019",
+      "sourceUrl": "https://medium.com/codeforcat/ishinomaki-hackathon-2019-949343a0590c",
+      "body": "Medium記事では、2019年の石巻ハッカソンテーマが地域猫カードゲームであり、CatBotやArcGISを組み合わせてデジタル化に挑戦したと説明されています。同記事は2016、2017、2018年の石巻ハッカソン参加テーマも振り返っています。"
+    },
+    {
+      "slug": "2020-catbot-beta-and-platform",
+      "date": "2020.12.30",
+      "displayDate": "2020年",
+      "sort": 20201230,
+      "title": "CatBot β版、クラウドファンディング、ライタソンプラットフォーム検討",
+      "category": "公開Web調査",
+      "confidence": "複数資料で確認",
+      "sourceLabel": "Code for Japan / CAMPFIRE / Medium",
+      "sourceUrl": "https://www.code4japan.org/news/civic-tech-fun-fun-report-2020-2",
+      "body": "2020年はCatBot β版公開、CAMPFIREでのクラウドファンディング、ライタソンプラットフォームの検討が公開情報から確認できます。Facebookイベント上にも2020年2月22日のCatBot β版お披露目イベントが残っています。"
+    },
+    {
+      "slug": "2021-2024-public-record-gap",
+      "date": "2021.01.01",
+      "displayDate": "2021年〜2024年",
+      "sort": 20210101,
+      "title": "公開Webで体系的に確認できる更新は限定的",
+      "category": "空白期メモ",
+      "confidence": "未確認情報あり",
+      "sourceLabel": "公開Web調査メモ",
+      "sourceUrl": "",
+      "body": "公式Mediumは2020年12月を最後に更新が止まっているように見えます。Facebookエクスポートには2022年の短い投稿が残りますが、2021〜2024年の継続活動は公開Webだけでは体系的に確認できません。活動がなかったという意味ではなく、公開情報として追跡可能な記録が限られるという扱いです。"
+    },
+    {
+      "slug": "2025-podcast-ai-agent",
+      "date": "2025.12.01",
+      "displayDate": "2025年",
+      "sort": 20251201,
+      "title": "Podcastで生成AI・猫エージェントなど2025年度版の近況が語られる",
+      "category": "公開Web調査",
+      "confidence": "公開ページで確認",
+      "sourceLabel": "Apple Podcasts: シビックテック井戸端キャスト",
+      "sourceUrl": "https://podcasts.apple.com/jp/podcast/ep1-0-12-code-for-cat%E3%81%AE%E5%8F%96%E3%82%8A%E7%B5%84%E3%81%BF-2025%E5%B9%B4%E5%BA%A6%E7%89%88/id1587297171?i=1000742234045",
+      "body": "公開Podcastページでは「Code for Catの取り組み 2025年度版」として、生成AIによる猫エージェント開発や猫との対話に関する話題が確認できます。公式Web/Mediumではなく音声発信で見える近況として扱います。"
+    }
+  ]
+}

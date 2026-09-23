@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPage } from "../lib/archive";
+
+const page = await getPage("analysis");
+const { Content } = await page!.render();
+---
+<BaseLayout title="分析レポート" description={page?.data.description}>
+  <section class="page-title compact">
+    <p class="eyebrow">社会的包摂と動物福祉</p>
+    <h1>分析レポート</h1>
+  </section>
+  <section class="prose">
+    <Content />
+  </section>
+</BaseLayout>

@@ -1,0 +1,46 @@
+---
+import EventCard from "../components/EventCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEvents } from "../lib/archive";
+
+const events = await getEvents();
+const themeDescriptions: Record<string, string> = {
+  "地域猫・TNR": "地域猫を地域の資産として捉え、TNR、保護団体支援、住民合意の課題へ接続するテーマです。",
+  "シビックテック": "Code for JapanやSocial Hack Dayなどの文脈で、猫を入口にした市民参加型の技術活用を扱います。",
+  "ワークショップ": "ライタソンやキャットソンのように、市民の疑問や経験をデータやプロトタイプへ変える場づくりです。",
+  "ハッカソン": "石巻ハッカソンや猫の日イベントなど、短期間でアイデアを形にする実験的な活動です。",
+  "オープンデータ": "Q&A、地図、地域情報、画像などを整理し、再利用しやすい知識基盤へつなげる観点です。",
+  "交流・コミュニティ": "Catdonやイベント交流を含む、猫好きと技術者が安心して集まるコミュニティ形成の記録です。",
+  "その他": "Facebook公開記録から明確な分類が難しいものをまとめています。",
+};
+const themes = events.reduce<Record<string, typeof events>>((groups, event) => {
+  for (const theme of event.data.themes.length ? event.data.themes : ["その他"]) {
+    groups[theme] ||= [];
+    groups[theme].push(event);
+  }
+  return groups;
+}, {});
+---
+<BaseLayout title="テーマ別" description="活動テーマ別にイベントを整理">
+  <section class="page-title">
+    <p class="eyebrow">テーマで見る</p>
+    <h1>活動テーマ</h1>
+    <p>Facebookページのイベントを、今回の公開Web調査で見えた主要論点に沿って読み直します。</p>
+  </section>
+  <section class="section theme-list">
+    {Object.entries(themes).map(([theme, items]) => (
+      <div class="theme-block">
+        <div class="section-heading">
+          <div>
+            <h2>{theme}</h2>
+            {themeDescriptions[theme] && <p>{themeDescriptions[theme]}</p>}
+          </div>
+          <span>{items.length}件</span>
+        </div>
+        <div class="grid cards">
+          {items.map((event) => <EventCard event={event} />)}
+        </div>
+      </div>
+    ))}
+  </section>
+</BaseLayout>
