@@ -95,4 +95,4 @@ npm run media:download -- --title "イベント写真候補" --source-url "https
 
 公開サイトにはメッセージ、端末情報、管理履歴、フォロワー個人名、リアクション個人名を掲載しない方針です。公開前に、人物が大きく写る写真、非公開意図が不明な画像、外部リンク、イベント本文中の個人情報を人間が確認してください。
 
-`src/lib/site-data.json` の `siteOrigin` は `https://example.com` の仮値です。公開URLやCNAMEが決まったら更新してください。
+公開URLとCNAMEは `https://code4cat.org` に設定しています。

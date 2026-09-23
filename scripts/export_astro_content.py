@@ -282,7 +282,7 @@ def main() -> None:
     write_json(ROOT / "src" / "lib" / "site-data.json", {
         "siteName": f"{prof['name']} 公式アーカイブ",
         "shortName": prof["name"],
-        "siteOrigin": "https://example.com",
+        "siteOrigin": "https://code4cat.org",
         "siteDescription": prof["description"],
         "logoPath": f"/{logo}" if logo else f"/{default_image}",
         "defaultOgImage": f"/{default_image}" if default_image else "",
@@ -291,7 +291,7 @@ def main() -> None:
         "eventCount": len(events),
         "postCount": len(posts),
         "imageCount": len(manifest),
-        "siteOriginNeedsReview": True,
+        "siteOriginNeedsReview": False,
     })
 
     public_docs = ROOT / "public" / "docs"
